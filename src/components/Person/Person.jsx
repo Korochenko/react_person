@@ -7,11 +7,18 @@ export const Person = ({ person }) => (
         <p className="Person__age">I am {person.age}</p>
       )}
 
-      {person.isMarried === true ? (
-        <p className="Person__partner"> {person.partnerName} is my wife</p>
-      ) : (
-        <p>I am not married</p>
-      )}
+      {person.isMarried === true && person.sex === 'm' && (
+          <p className="Person__partner"> {person.partnerName} is my wife</p>
+        )} 
+
+      {person.isMarried === true && person.sex === 'f' && (
+          <p className="Person__partner"> {person.partnerName} is my husband</p>
+        )} 
+
+        {person.isMarried === false && (
+          <p>I am not married</p>
+        )}
+
     </section>
   </div>
 );
